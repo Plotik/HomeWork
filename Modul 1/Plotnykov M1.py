@@ -22,15 +22,22 @@ choice = input("\033[38mMake your choice: ")
 if ord(choice) == 49:
     import WALL
     print("\033[31mProgram 1 - Answer: ")
-    print(WALL.max_value)
+    res = WALL.breaks_solution(WALL.wall)
+    if res != 0:
+        print("Наименьшее количество пересечений кирпичей:", res)
+    else:
+        print("Пересечений кирпичей нет")
 # ========= PROGRAM 2
 elif ord(choice) == 50:
     print("\033[32mProgram 2 - Answer: ")
     import SEQUENCE
+    for norm_view in SEQUENCE.get_uniq(SEQUENCE.data, SEQUENCE.keys):
+        print(norm_view)
 # ========= PROGRAM 3
 elif ord(choice) == 51:
     print("\033[32mProgram 3 - Answer: ")
     import SORT
+    print(SORT.data)
 # ========= PROGRAM 4
 elif ord(choice) == 52:
     file = (open("profile.txt", "w", encoding="utf-8"))

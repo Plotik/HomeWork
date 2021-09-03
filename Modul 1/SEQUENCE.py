@@ -19,6 +19,3 @@ data = [
     {"Имя": "Маша", "Фамилия": "Сидорова", "Возраст": 27},
 ]
 keys = ["Имя", "Фамилия"]
-
-for norm_view in get_uniq(data, keys):
-    print(norm_view)
