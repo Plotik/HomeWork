@@ -42,4 +42,4 @@ elif ord(choice) == 52:
 elif ord(choice) == 113:
     print("Your Program Was Ended")
 else:
-    print("вяиывпи Please, Select Correct Program!!!!")
+    print("Please, Select Correct Program")
