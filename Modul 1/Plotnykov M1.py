@@ -11,13 +11,14 @@ else:
     file.close()
 
 print("We have a few program for you: ")
-print("\033[31mProgram #1 - BRICKS     - Enter 1")
+print("\033[31mProgram #1 -   BRICKS   - Enter 1")
 print("\033[32mProgram #2 - DICTIONARY - Enter 2")
-print("\033[33mProgram #3 - SEQUENCE   - Enter 3")
+print("\033[33mProgram #3 -  SEQUENCE  - Enter 3")
 print("\033[34mProgram #4 - ChangeName - Enter 4")
-print("\033[35mProgram #5 - QUIT       - Enter q")
+print("\033[35mProgram #5 -    QUIT    - Enter q")
 
 choice = input("\033[38mMake your choice: ")
+
 # ========= PROGRAM 1
 if ord(choice) == 49:
     import WALL
@@ -27,6 +28,7 @@ if ord(choice) == 49:
         print("Наименьшее количество пересечений кирпичей:", res)
     else:
         print("Пересечений кирпичей нет")
+
 # ========= PROGRAM 2
 elif ord(choice) == 50:
     print("\033[32mProgram 2 - Answer: ")
