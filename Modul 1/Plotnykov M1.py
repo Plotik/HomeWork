@@ -1,18 +1,29 @@
-import os
-if os.path.getsize("profile.txt") == 0:
-    file = (open("profile.txt", "a+", encoding="utf-8"))
-    profile_name = input("Hello! How can I contact to you?\nPlease Put Your Name: ",)
-    file.write(profile_name)
-    print("Hello, ", profile_name, "! Nice To Meet You!")
-    file.close()
-else:
-    file = (open("profile.txt", "r", encoding="utf-8"))
-    print(file.read(), ", Hello! Nice To Meet You! ")
-    file.close()
+# import os
+# if os.path.getsize("profile.txt") == 0:
+#     file = (open("profile.txt", "a+", encoding="utf-8"))
+#     profile_name = input("Hello! How can I contact to you?\nPlease Put Your Name: ",)
+#     file.write(profile_name)
+#     print("Hello, ", profile_name, "! Nice To Meet You!")
+#     file.close()
+# else:
+#     file = (open("profile.txt", "r", encoding="utf-8"))
+#     print(file.read(), ", Hello! Nice To Meet You! ")
+#     file.close()
 
+from pathlib import Path
+file = Path("profile.txt")
+if file.exists():
+    with open(file, "r") as profile:
+        content = profile.readline()
+else:
+    user_input = input("Hello! How can I contact to you?\nPlease Put Your Name: ",)
+    with open(file, "w") as profile:
+        profile.write(user_input)
 
 program = ["1", "2", "3", "4", "q", "Q"]
-print("We have a few program for you: ")
+with open(file, "r") as profile:
+    user_name = profile.readline()
+    print(user_name, "Hello! We have a few program for you: ")
 while True:
     print("\033[37m=================================")
     print("\033[31mProgram #1 -   BRICKS   - Enter 1")
