@@ -1,15 +1,3 @@
-# import os
-# if os.path.getsize("profile.txt") == 0:
-#     file = (open("profile.txt", "a+", encoding="utf-8"))
-#     profile_name = input("Hello! How can I contact to you?\nPlease Put Your Name: ",)
-#     file.write(profile_name)
-#     print("Hello, ", profile_name, "! Nice To Meet You!")
-#     file.close()
-# else:
-#     file = (open("profile.txt", "r", encoding="utf-8"))
-#     print(file.read(), ", Hello! Nice To Meet You! ")
-#     file.close()
-
 from pathlib import Path
 file = Path("profile.txt")
 if file.exists():
