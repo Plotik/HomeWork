@@ -119,12 +119,6 @@ INSERT INTO
 .mode column
 .width  20 25 4 10 5 20 10
 
---SELECT a_name as Author, name as Book_Name, years as Years, release as Release,
---    pages as Pages, cat_name as Category, label as Tag FROM book
---    JOIN author ON author_id = author.id
---    JOIN category ON category_id = category.id
---    JOIN tag ON tag_id = tag.id;
-
 SELECT cat_name as Category, COUNT(name) as Book_Name FROM book
     JOIN category ON category_id = category.id
     GROUP BY category_id;
@@ -142,6 +136,9 @@ SELECT cat_name as Category, MIN(pages) as Min_Pages FROM book
     GROUP BY category_id;
 
 SELECT release as Release_Date, COUNT(name) as Book_Name FROM book
+    GROUP BY release;
+
+SELECT release as Release_Date, MAX(pages) as MIN_Pages FROM book
     GROUP BY release;
 
 SELECT a_name as Author, COUNT(name) as Book_Name FROM book
